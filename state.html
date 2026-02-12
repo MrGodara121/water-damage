@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{state_meta_title}</title>
+    <meta name="description" content="{state_meta_description}">
+    <link rel="canonical" href="https://{domain}/state/{state_slug}/">
+    <style>/* same CSS */</style>
+</head>
+<body>
+    <header>...</header>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">Home</a> › <span>{state_name}</span>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Water Damage Restoration in {state_name}</h1>
+            <p>{state_hero_subheading}</p>
+        </div>
+    </section>
+    <div class="container">
+        <h2 class="section-title">📍 Cities in {state_name}</h2>
+        <div class="cities-grid" id="stateCities"></div>
+    </div>
+    <footer>...</footer>
+    <script>
+        window.citiesData = {cities_json};
+        // render cities filtered by state
+    </script>
+</body>
+</html>
