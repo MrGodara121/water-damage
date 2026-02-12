@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{blog_title}</title>
+    <meta name="description" content="{blog_description}">
+    <link rel="canonical" href="https://{domain}/blog/{blog_slug}/">
+    <style>/* same CSS */</style>
+</head>
+<body>
+    <header>...</header>
+    <div class="container">
+        <article style="max-width:800px; margin:40px auto;">
+            <h1>{blog_title}</h1>
+            <div class="blog-meta">By {blog_author} on {blog_date}</div>
+            <div class="blog-content">{blog_content}</div>
+        </article>
+    </div>
+    <footer>...</footer>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{blog_title}",
+        "description": "{blog_description}",
+        "author": "{blog_author}",
+        "datePublished": "{blog_date}"
+    }
+    </script>
+</body>
+</html>
