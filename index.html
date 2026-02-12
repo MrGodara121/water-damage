@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>{home_meta_title}</title>
+    <meta name="description" content="{home_meta_description}">
+    <link rel="canonical" href="https://{domain}/">
+    <meta property="og:title" content="{home_og_title}">
+    <meta property="og:description" content="{home_og_description}">
+    <meta property="og:url" content="https://{domain}/">
+    <meta property="og:site_name" content="{site_name}">
+    <style>
+        /* ========== DARK THEME MASTER CSS ========== */
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+        body{background:#000;color:#fff;line-height:1.6;}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+        .header{background:#0a0a0a;padding:15px 0;border-bottom:1px solid #333;position:sticky;top:0;z-index:100;}
+        .header-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+        .logo{font-size:24px;font-weight:800;color:#fff;text-decoration:none;}
+        .logo span{color:#ffcc00;}
+        .nav-menu{display:flex;gap:30px;list-style:none;}
+        .nav-menu a{color:#ccc;text-decoration:none;font-weight:500;}
+        .nav-menu a:hover{color:#ffcc00;}
+        .emergency-btn{background:#dc3545;color:#fff;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:8px;}
+        .hero{background:linear-gradient(145deg,#111,#000);border:1px solid #333;border-radius:20px;padding:60px 40px;margin:40px 0;}
+        .hero h1{font-size:48px;font-weight:800;color:#fff;margin-bottom:20px;}
+        .hero-subheadings{display:flex;gap:30px;margin-bottom:30px;flex-wrap:wrap;}
+        .hero-subheading{display:flex;align-items:center;gap:8px;color:#ccc;}
+        .hero-subheading i{color:#ffcc00;}
+        .hero-buttons{display:flex;gap:20px;flex-wrap:wrap;}
+        .btn{padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:0.3s;}
+        .btn-primary{background:#ffcc00;color:#000;}
+        .btn-primary:hover{background:#ffd700;transform:translateY(-2px);}
+        .btn-outline{background:transparent;border:2px solid #333;color:#fff;}
+        .btn-outline:hover{border-color:#ffcc00;color:#ffcc00;}
+        .trust-badges{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin:40px 0;}
+        .trust-badge{background:#111;border:1px solid #333;border-radius:50px;padding:8px 20px;display:flex;align-items:center;gap:8px;color:#ccc;font-size:14px;}
+        .trust-badge i{color:#ffcc00;}
+        .form-section{background:#111;border:1px solid #333;border-radius:20px;padding:40px;margin:40px 0;}
+        .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+        .form-fields{background:#1a1a1a;padding:30px;border-radius:20px;border:1px solid #333;}
+        .form-group{margin-bottom:20px;}
+        .form-group input,.form-group select{width:100%;padding:16px;background:#111;border:1px solid #333;border-radius:12px;color:#fff;font-size:16px;}
+        .form-group input::placeholder{color:#999;}
+        .submit-btn{width:100%;padding:16px;background:#28a745;color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;}
+        .submit-btn:hover{background:#218838;}
+        .cities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:25px;margin:40px 0;}
+        .city-card{background:#111;border:1px solid #333;border-radius:20px;padding:25px;text-decoration:none;color:#fff;transition:0.3s;}
+        .city-card:hover{border-color:#ffcc00;transform:translateY(-5px);}
+        .city-name{font-size:22px;font-weight:700;color:#ffcc00;margin-bottom:10px;}
+        .city-price{font-size:20px;font-weight:800;color:#28a745;margin-bottom:10px;}
+        .city-response{display:flex;align-items:center;gap:5px;color:#ccc;font-size:14px;margin-bottom:15px;}
+        .city-feature{background:#222;padding:4px 12px;border-radius:50px;font-size:12px;color:#ccc;}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin:40px 0;}
+        .testimonial-card{background:#111;border:1px solid #333;border-radius:20px;padding:30px;}
+        .testimonial-rating{color:#ffc107;margin-bottom:15px;}
+        .testimonial-text{font-size:16px;color:#ccc;font-style:italic;margin-bottom:20px;}
+        .insurance-section{background:#111;border:1px solid #333;border-radius:20px;padding:40px;margin:40px 0;text-align:center;}
+        .insurance-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px;}
+        .insurance-item{background:#1a1a1a;padding:10px 20px;border-radius:50px;color:#ccc;border:1px solid #333;}
+        .faq-section{background:#111;border:1px solid #333;border-radius:20px;padding:40px;margin:40px 0;}
+        .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px;}
+        .faq-item{border-bottom:1px solid #333;padding-bottom:20px;}
+        .faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#fff;font-weight:600;}
+        .faq-question i{color:#ffcc00;transition:0.3s;}
+        .faq-answer{margin-top:15px;color:#ccc;display:none;}
+        .faq-item.active .faq-answer{display:block;}
+        .faq-item.active .faq-question i{transform:rotate(180deg);}
+        .footer{background:#0a0a0a;border-top:1px solid #333;padding:60px 0 30px;margin-top:60px;}
+        .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:40px;margin-bottom:40px;}
+        .footer-about p{color:#999;margin:20px 0;font-size:14px;}
+        .footer-social{display:flex;gap:15px;}
+        .footer-social a{width:40px;height:40px;background:#222;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;}
+        .footer-social a:hover{background:#ffcc00;color:#000;}
+        .footer-links h4{color:#fff;margin-bottom:20px;}
+        .footer-links ul{list-style:none;}
+        .footer-links li{margin-bottom:12px;}
+        .footer-links a{color:#999;text-decoration:none;font-size:14px;}
+        .footer-links a:hover{color:#ffcc00;}
+        .footer-bottom{border-top:1px solid #333;padding-top:30px;text-align:center;}
+        .footer-legal{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;margin-bottom:20px;}
+        .footer-legal a{color:#999;text-decoration:none;font-size:13px;}
+        .footer-legal a:hover{color:#ffcc00;}
+        .copyright{color:#999;font-size:13px;}
+        .disclaimer-text{color:#777;font-size:12px;max-width:1000px;margin:20px auto 0;line-height:1.7;}
+        .adsense-container{background:#111;border:1px solid #333;border-radius:12px;padding:20px;margin:30px 0;text-align:center;}
+        .adsense-label{color:#777;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
+        .search-container{position:relative;width:300px;}
+        .search-input{width:100%;padding:12px 20px;background:#1a1a1a;border:1px solid #333;border-radius:50px;color:#fff;}
+        .search-results{position:absolute;top:100%;left:0;right:0;background:#1a1a1a;border:1px solid #333;border-radius:12px;margin-top:5px;max-height:300px;overflow-y:auto;display:none;z-index:101;}
+        .search-result-item{padding:12px 20px;border-bottom:1px solid #333;cursor:pointer;color:#ccc;display:block;text-decoration:none;}
+        .search-result-item:hover{background:#333;color:#ffcc00;}
+        @media (max-width:1024px){.form-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.faq-grid{grid-template-columns:1fr;}}
+        @media (max-width:768px){.hero h1{font-size:32px;}.header-content{flex-direction:column;gap:15px;}.nav-menu{flex-direction:column;gap:15px;text-align:center;}.search-container{width:100%;}.footer-grid{grid-template-columns:1fr;}}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">{site_logo_text}<span>{site_logo_icon}</span>.pro</a>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/states/">States</a></li>
+                        <li><a href="/cities/">Cities</a></li>
+                        <li><a href="/calculator/">Calculator</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search your city or ZIP...">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                <a href="tel:{site_phone_tracking}" class="emergency-btn">
+                    <i class="fas fa-phone-alt"></i> 24/7 Emergency
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>{hero_heading}</h1>
+                <div class="hero-subheadings">
+                    <span class="hero-subheading"><i class="fas fa-bolt"></i> {hero_subheading_1}</span>
+                    <span class="hero-subheading"><i class="fas fa-shield-alt"></i> {hero_subheading_2}</span>
+                    <span class="hero-subheading"><i class="fas fa-clock"></i> {hero_subheading_3}</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#estimate" class="btn btn-primary">
+                        <i class="fas fa-calculator"></i> {hero_cta_primary_text}
+                    </a>
+                    <a href="tel:{site_phone_tracking}" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> {hero_cta_secondary_text}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="trust-badges">
+            <span class="trust-badge"><i class="fas fa-certificate"></i> {trust_badge_1_text}</span>
+            <span class="trust-badge"><i class="fas fa-check-circle"></i> {trust_badge_2_text}</span>
+            <span class="trust-badge"><i class="fas fa-star"></i> {trust_badge_3_text}</span>
+            <span class="trust-badge"><i class="fas fa-shield"></i> {trust_badge_4_text}</span>
+            <span class="trust-badge"><i class="fas fa-clock"></i> {trust_badge_5_text}</span>
+            <span class="trust-badge"><i class="fas fa-file-invoice"></i> {trust_badge_6_text}</span>
+            <!-- certifications will be injected dynamically -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="adsense-container">
+            <div class="adsense-label">ADVERTISEMENT</div>
+            <div class="adsense-placeholder">{adsense_top_code}</div>
+        </div>
+    </div>
+
+    <section class="form-section" id="estimate">
+        <div class="container">
+            <div class="form-grid">
+                <div class="form-content">
+                    <h2>{lead_form_title}</h2>
+                    <p>{lead_form_incentive}</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> 100% Free - No obligation</li>
+                        <li><i class="fas fa-check-circle"></i> Same-day response guaranteed</li>
+                        <li><i class="fas fa-check-circle"></i> Work with 50+ insurance carriers</li>
+                        <li><i class="fas fa-check-circle"></i> IICRC certified technicians</li>
+                        <li><i class="fas fa-check-circle"></i> 5-year warranty on all work</li>
+                    </ul>
+                </div>
+                <div class="form-fields">
+                    <form action="https://formspree.io/f/{formspree_id}" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="city" placeholder="Your City" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="state" required>
+                                <option value="">Select State</option>
+                                <option value="TX">Texas</option>
+                                <option value="FL">Florida</option>
+                                <option value="CA">California</option>
+                                <option value="NY">New York</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> {lead_form_button_text}
+                        </button>
+                        <div class="form-disclaimer">
+                            🔒 By submitting, you agree to our <a href="/privacy/">Privacy Policy</a>.
+                            {disclosure_text}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">📍 Water Damage Services in <span style="color: #ffcc00;">Top Cities</span></h2>
+        <p class="section-subtitle">24/7 emergency response • Free estimates • Insurance approved</p>
+        <div class="cities-grid" id="featuredCities"></div>
+        <div style="text-align:center; margin:20px 0 40px;">
+            <a href="/cities/" class="btn btn-outline">View All Cities <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="insurance-section">
+            <h3 style="color:#fff; margin-bottom:20px;">🏢 We Work Directly With 50+ Insurance Carriers</h3>
+            <div class="insurance-grid" id="insurancePartners"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="adsense-container">
+            <div class="adsense-label">ADVERTISEMENT</div>
+            <div class="adsense-placeholder">{adsense_middle_code}</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">⭐ What Our Customers Say</h2>
+        <p class="section-subtitle">{avg_rating}/5 from {annual_reviews_count}+ reviews</p>
+        <div class="testimonials-grid" id="featuredTestimonials"></div>
+    </div>
+
+    <div class="container">
+        <div class="faq-section">
+            <h2 style="color:#fff; text-align:center;">❓ Frequently Asked Questions</h2>
+            <div class="faq-grid" id="faqGrid"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="adsense-container">
+            <div class="adsense-label">ADVERTISEMENT</div>
+            <div class="adsense-placeholder">{adsense_bottom_code}</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>{site_logo_text}<span style="color:#ffcc00;">{site_logo_icon}</span>.pro</h3>
+                    <p>{site_tagline}</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/{social_facebook}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/{social_twitter}"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/{social_instagram}"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/{social_youtube}"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/water-damage/">Water Damage</a></li>
+                        <li><a href="/basement-flood/">Basement Flood</a></li>
+                        <li><a href="/mold-remediation/">Mold Remediation</a></li>
+                        <li><a href="/sewage-cleanup/">Sewage Cleanup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Top States</h4>
+                    <ul id="footerStates"></ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Top Cities</h4>
+                    <ul id="footerCities"></ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/privacy/">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/disclaimer/">Disclaimer</a> | <a href="/disclosure/">Disclosure</a>
+                </div>
+                <p class="copyright">© {copyright_year} {site_name}. All rights reserved.</p>
+                <div class="disclaimer-text">
+                    <p><strong>Disclaimer:</strong> {footer_disclaimer_text}</p>
+                    <p><strong>Affiliate Disclosure:</strong> {footer_disclosure_text}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cities data will be injected by Apps Script
+        window.citiesData = {cities_json};
+        window.testimonialsData = {testimonials_json};
+        window.insuranceData = {insurance_json};
+        window.statesData = {states_json};
+
+        // Render featured cities
+        const featuredCities = document.getElementById('featuredCities');
+        if (featuredCities && window.citiesData) {
+            featuredCities.innerHTML = window.citiesData.slice(0,6).map(c => `
+                <a href="/city/${c.city_slug}/" class="city-card">
+                    <div class="city-name">${c.city_name}</div>
+                    <div class="city-price">$${c.avg_cost_min} - $${c.avg_cost_max}</div>
+                    <div class="city-response"><i class="fas fa-clock"></i> ${c.response_time_hours}hr response</div>
+                    <div class="city-features"><span class="city-feature">IICRC</span></div>
+                </a>
+            `).join('');
+        }
+
+        // Render testimonials
+        const testimonialsEl = document.getElementById('featuredTestimonials');
+        if (testimonialsEl && window.testimonialsData) {
+            testimonialsEl.innerHTML = window.testimonialsData.slice(0,3).map(t => `
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">${'<i class="fas fa-star"></i>'.repeat(t.rating||5)}</div>
+                    <p class="testimonial-text">"${t.review_content}"</p>
+                    <div class="testimonial-author">
+                        <div><h4>${t.customer_name}</h4><p>${t.customer_city}, Verified Homeowner</p></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render insurance partners
+        const insuranceEl = document.getElementById('insurancePartners');
+        if (insuranceEl && window.insuranceData) {
+            insuranceEl.innerHTML = window.insuranceData.slice(0,8).map(i => 
+                `<span class="insurance-item">${i.partner_name}</span>`
+            ).join('');
+        }
+
+        // Footer states
+        const footerStates = document.getElementById('footerStates');
+        if (footerStates && window.statesData) {
+            footerStates.innerHTML = window.statesData.slice(0,5).map(s => 
+                `<li><a href="/state/${s.state_slug}/">${s.state_name}</a></li>`
+            ).join('');
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        if (searchInput && window.citiesData) {
+            const cityList = window.citiesData.map(c => ({name: `${c.city_name}, ${c.state_code}`, url: `/city/${c.city_slug}/`}));
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                if (query.length < 2) { searchResults.style.display = 'none'; return; }
+                const matches = cityList.filter(c => c.name.toLowerCase().includes(query)).slice(0,5);
+                if (matches.length) {
+                    searchResults.innerHTML = matches.map(c => 
+                        `<a href="${c.url}" class="search-result-item"><i class="fas fa-map-marker-alt" style="color:#ffcc00; margin-right:10px;"></i>${c.name}</a>`
+                    ).join('');
+                    searchResults.style.display = 'block';
+                } else searchResults.style.display = 'none';
+            });
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) searchResults.style.display = 'none';
+            });
+        }
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function() { this.parentElement.classList.toggle('active'); });
+        });
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={google_analytics_id}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{google_analytics_id}');
+    </script>
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '{facebook_pixel_id}');
+        fbq('track', 'PageView');
+    </script>
+</body>
+</html>
