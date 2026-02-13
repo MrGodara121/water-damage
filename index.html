@@ -2,106 +2,743 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>{home_meta_title}</title>
-    <meta name="description" content="{home_meta_description}">
-    <link rel="canonical" href="https://{domain}/">
-    <meta property="og:title" content="{home_og_title}">
-    <meta property="og:description" content="{home_og_description}">
-    <meta property="og:url" content="https://{domain}/">
-    <meta property="og:site_name" content="{site_name}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meta_title</title>
+    <meta name="description" content="meta_description">
+    <link rel="canonical" href="https://mrgodara121.github.io/water-damage/">
+    <meta property="og:title" content="og_title">
+    <meta property="og:description" content="og_description">
+    <meta property="og:url" content="https://mrgodara121.github.io/water-damage/">
+    <meta property="og:site_name" content="WaterDamage.pro">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="og_title">
+    <meta name="twitter:description" content="og_description">
     <style>
-        /* ========== DARK THEME MASTER CSS ========== */
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-        body{background:#000;color:#fff;line-height:1.6;}
-        .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-        .header{background:#0a0a0a;padding:15px 0;border-bottom:1px solid #333;position:sticky;top:0;z-index:100;}
-        .header-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-        .logo{font-size:24px;font-weight:800;color:#fff;text-decoration:none;}
-        .logo span{color:#ffcc00;}
-        .nav-menu{display:flex;gap:30px;list-style:none;}
-        .nav-menu a{color:#ccc;text-decoration:none;font-weight:500;}
-        .nav-menu a:hover{color:#ffcc00;}
-        .emergency-btn{background:#dc3545;color:#fff;padding:12px 24px;border-radius:50px;text-decoration:none;font-weight:700;display:flex;align-items:center;gap:8px;}
-        .hero{background:linear-gradient(145deg,#111,#000);border:1px solid #333;border-radius:20px;padding:60px 40px;margin:40px 0;}
-        .hero h1{font-size:48px;font-weight:800;color:#fff;margin-bottom:20px;}
-        .hero-subheadings{display:flex;gap:30px;margin-bottom:30px;flex-wrap:wrap;}
-        .hero-subheading{display:flex;align-items:center;gap:8px;color:#ccc;}
-        .hero-subheading i{color:#ffcc00;}
-        .hero-buttons{display:flex;gap:20px;flex-wrap:wrap;}
-        .btn{padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:0.3s;}
-        .btn-primary{background:#ffcc00;color:#000;}
-        .btn-primary:hover{background:#ffd700;transform:translateY(-2px);}
-        .btn-outline{background:transparent;border:2px solid #333;color:#fff;}
-        .btn-outline:hover{border-color:#ffcc00;color:#ffcc00;}
-        .trust-badges{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin:40px 0;}
-        .trust-badge{background:#111;border:1px solid #333;border-radius:50px;padding:8px 20px;display:flex;align-items:center;gap:8px;color:#ccc;font-size:14px;}
-        .trust-badge i{color:#ffcc00;}
-        .form-section{background:#111;border:1px solid #333;border-radius:20px;padding:40px;margin:40px 0;}
-        .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-        .form-fields{background:#1a1a1a;padding:30px;border-radius:20px;border:1px solid #333;}
-        .form-group{margin-bottom:20px;}
-        .form-group input,.form-group select{width:100%;padding:16px;background:#111;border:1px solid #333;border-radius:12px;color:#fff;font-size:16px;}
-        .form-group input::placeholder{color:#999;}
-        .submit-btn{width:100%;padding:16px;background:#28a745;color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;}
-        .submit-btn:hover{background:#218838;}
-        .cities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:25px;margin:40px 0;}
-        .city-card{background:#111;border:1px solid #333;border-radius:20px;padding:25px;text-decoration:none;color:#fff;transition:0.3s;}
-        .city-card:hover{border-color:#ffcc00;transform:translateY(-5px);}
-        .city-name{font-size:22px;font-weight:700;color:#ffcc00;margin-bottom:10px;}
-        .city-price{font-size:20px;font-weight:800;color:#28a745;margin-bottom:10px;}
-        .city-response{display:flex;align-items:center;gap:5px;color:#ccc;font-size:14px;margin-bottom:15px;}
-        .city-feature{background:#222;padding:4px 12px;border-radius:50px;font-size:12px;color:#ccc;}
-        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:30px;margin:40px 0;}
-        .testimonial-card{background:#111;border:1px solid #333;border-radius:20px;padding:30px;}
-        .testimonial-rating{color:#ffc107;margin-bottom:15px;}
-        .testimonial-text{font-size:16px;color:#ccc;font-style:italic;margin-bottom:20px;}
-        .insurance-section{background:#111;border:1px solid #333;border-radius:20px;padding:40px;margin:40px 0;text-align:center;}
-        .insurance-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px;}
-        .insurance-item{background:#1a1a1a;padding:10px 20px;border-radius:50px;color:#ccc;border:1px solid #333;}
-        .faq-section{background:#111;border:1px solid #333;border-radius:20px;padding:40px;margin:40px 0;}
-        .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px;}
-        .faq-item{border-bottom:1px solid #333;padding-bottom:20px;}
-        .faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#fff;font-weight:600;}
-        .faq-question i{color:#ffcc00;transition:0.3s;}
-        .faq-answer{margin-top:15px;color:#ccc;display:none;}
-        .faq-item.active .faq-answer{display:block;}
-        .faq-item.active .faq-question i{transform:rotate(180deg);}
-        .footer{background:#0a0a0a;border-top:1px solid #333;padding:60px 0 30px;margin-top:60px;}
-        .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:40px;margin-bottom:40px;}
-        .footer-about p{color:#999;margin:20px 0;font-size:14px;}
-        .footer-social{display:flex;gap:15px;}
-        .footer-social a{width:40px;height:40px;background:#222;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;}
-        .footer-social a:hover{background:#ffcc00;color:#000;}
-        .footer-links h4{color:#fff;margin-bottom:20px;}
-        .footer-links ul{list-style:none;}
-        .footer-links li{margin-bottom:12px;}
-        .footer-links a{color:#999;text-decoration:none;font-size:14px;}
-        .footer-links a:hover{color:#ffcc00;}
-        .footer-bottom{border-top:1px solid #333;padding-top:30px;text-align:center;}
-        .footer-legal{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;margin-bottom:20px;}
-        .footer-legal a{color:#999;text-decoration:none;font-size:13px;}
-        .footer-legal a:hover{color:#ffcc00;}
-        .copyright{color:#999;font-size:13px;}
-        .disclaimer-text{color:#777;font-size:12px;max-width:1000px;margin:20px auto 0;line-height:1.7;}
-        .adsense-container{background:#111;border:1px solid #333;border-radius:12px;padding:20px;margin:30px 0;text-align:center;}
-        .adsense-label{color:#777;font-size:11px;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
-        .search-container{position:relative;width:300px;}
-        .search-input{width:100%;padding:12px 20px;background:#1a1a1a;border:1px solid #333;border-radius:50px;color:#fff;}
-        .search-results{position:absolute;top:100%;left:0;right:0;background:#1a1a1a;border:1px solid #333;border-radius:12px;margin-top:5px;max-height:300px;overflow-y:auto;display:none;z-index:101;}
-        .search-result-item{padding:12px 20px;border-bottom:1px solid #333;cursor:pointer;color:#ccc;display:block;text-decoration:none;}
-        .search-result-item:hover{background:#333;color:#ffcc00;}
-        @media (max-width:1024px){.form-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.faq-grid{grid-template-columns:1fr;}}
-        @media (max-width:768px){.hero h1{font-size:32px;}.header-content{flex-direction:column;gap:15px;}.nav-menu{flex-direction:column;gap:15px;text-align:center;}.search-container{width:100%;}.footer-grid{grid-template-columns:1fr;}}
-    </style>
+/* ---------- DESIGN SYSTEM ---------- */
+:root {
+  --bg-primary: #0f172a;      /* Deep slate */
+  --bg-card: #1e293b;         /* Card background */
+  --accent: #3b82f6;          /* Pro blue */
+  --text-light: #f8fafc;      /* Primary text */
+  --text-muted: #94a3b8;      /* Secondary text */
+  --border-light: rgba(255,255,255,0.1);
+  --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.2);
+  --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.3);
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- STICKY PRO HEADER (GLASSMORPHISM + SHRINK) ---------- */
+.header {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.header.scrolled {
+  padding: 12px 0;
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--accent); }
+
+/* ---------- DESKTOP NAVIGATION ---------- */
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+.nav-menu a:hover {
+  color: var(--text-light);
+}
+.nav-menu a:hover::after { width: 100%; }
+
+/* ---------- EMERGENCY BUTTON (ALWAYS VISIBLE) ---------- */
+.emergency-btn {
+  background: #dc2626;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.emergency-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.05);
+}
+
+/* ---------- PRO SEARCH BAR (DESKTOP) ---------- */
+.search-container {
+  position: relative;
+  width: 280px;
+  transition: width 0.3s ease;
+}
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  color: var(--text-light);
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+.search-results {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  margin-top: 5px;
+  max-height: 320px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1001;
+  box-shadow: var(--shadow-md);
+}
+.search-result-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  color: var(--text-muted);
+  display: block;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.search-result-item:hover {
+  background: rgba(59,130,246,0.1);
+  color: var(--text-light);
+}
+.search-result-item:last-child { border-bottom: none; }
+
+/* ---------- HAMBURGER MENU (MOBILE ONLY) ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--text-light);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* ---------- FULL-SCREEN OVERLAY (SLIDE FROM RIGHT) ---------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-primary);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 32px 32px;
+  overflow-y: auto;
+}
+.overlay.active { right: 0; }
+.overlay-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.overlay-close:hover {
+  background: var(--accent);
+  color: white;
+}
+.overlay-nav {
+  list-style: none;
+  margin-top: 40px;
+}
+.overlay-nav li { margin-bottom: 24px; }
+.overlay-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.overlay-nav a:hover { color: var(--accent); }
+
+/* ---------- MOBILE SEARCH ICON + EXPAND ---------- */
+.mobile-search-icon {
+  display: none;
+  font-size: 22px;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 10px;
+}
+.mobile-search-expand {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-light);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  z-index: 1002;
+}
+.mobile-search-expand.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-search-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  color: var(--text-light);
+  font-size: 16px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  background: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.1), transparent 70%);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 64px 48px;
+  margin: 48px 0;
+}
+.hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.hero-subheadings {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.hero-subheading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 18px;
+}
+.hero-subheading i { color: var(--accent); }
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--border-light);
+  color: var(--text-light);
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- TRUST BADGES ---------- */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 48px 0;
+}
+.trust-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.trust-badge i { color: var(--accent); }
+
+/* ---------- CARDS (CITIES, STATES, SERVICES) ---------- */
+.cities-grid, .states-grid, .services-grid, .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  margin: 48px 0;
+}
+.city-card, .state-card, .service-card, .blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+.city-card:hover, .state-card:hover, .service-card:hover, .blog-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.city-name, .state-name, .service-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.city-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #10b981;
+  margin-bottom: 12px;
+}
+.city-response {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+.city-feature {
+  background: rgba(59,130,246,0.1);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---------- TESTIMONIAL CARDS ---------- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin: 48px 0;
+}
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+.testimonial-rating { color: #fbbf24; margin-bottom: 16px; }
+.testimonial-text {
+  font-size: 17px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.testimonial-author h4 {
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.testimonial-author p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ---------- INSURANCE SECTION ---------- */
+.insurance-section {
+  background: linear-gradient(145deg, var(--bg-card), #0b1a2e);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  margin: 48px 0;
+  text-align: center;
+}
+.insurance-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 32px;
+}
+.insurance-item {
+  background: rgba(255,255,255,0.03);
+  padding: 12px 28px;
+  border-radius: 50px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light);
+  font-weight: 500;
+  transition: var(--transition);
+}
+.insurance-item:hover {
+  border-color: var(--accent);
+  color: var(--text-light);
+}
+
+/* ---------- FAQ ACCORDION ---------- */
+.faq-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  margin: 48px 0;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 20px;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-light);
+  font-weight: 600;
+  padding: 8px 0;
+}
+.faq-question i {
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+.faq-answer {
+  margin-top: 16px;
+  color: var(--text-muted);
+  display: none;
+  line-height: 1.7;
+}
+.faq-item.active .faq-answer { display: block; }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+
+/* ---------- CALCULATOR PAGE SPECIFICS ---------- */
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  margin: 48px 0;
+}
+.city-selector {
+  width: 100%;
+  padding: 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  color: var(--text-light);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.calculator-slider { width: 100%; margin: 24px 0; }
+.calculator-result {
+  background: linear-gradient(145deg, var(--bg-primary), #0c1a2b);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  border: 1px solid var(--border-light);
+}
+.result-amount {
+  font-size: 48px;
+  font-weight: 800;
+  color: #10b981;
+  margin: 16px 0;
+}
+
+/* ---------- FOOTER (STACKS ON MOBILE) ---------- */
+.footer {
+  background: #0b111f;
+  border-top: 1px solid var(--border-light);
+  padding: 64px 0 32px;
+  margin-top: 80px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-about p {
+  color: var(--text-muted);
+  margin: 24px 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer-social a:hover {
+  background: var(--accent);
+  color: white;
+}
+.footer-links h4 {
+  color: var(--text-light);
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 14px; }
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent); }
+.footer-bottom {
+  border-top: 1px solid var(--border-light);
+  padding-top: 32px;
+  text-align: center;
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.footer-legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-legal a:hover { color: var(--accent); }
+.copyright { color: var(--text-muted); font-size: 14px; }
+.disclaimer-text {
+  color: var(--text-muted);
+  font-size: 13px;
+  max-width: 1000px;
+  margin: 24px auto 0;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* ---------- ADSENSE CONTAINERS ---------- */
+.adsense-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 40px 0;
+  text-align: center;
+}
+.adsense-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+/* ---------- RESPONSIVE DESIGN (MOBILE FIRST) ---------- */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 44px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 48px 28px; }
+  .hero h1 { font-size: 38px; }
+  .hero-subheadings { flex-direction: column; gap: 12px; }
+  .hero-buttons { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  
+  /* Hide desktop nav, show hamburger */
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+  .search-container { display: none; }
+  .mobile-search-icon { display: block; }
+  
+  /* Header adjustments */
+  .header-content { gap: 16px; }
+  .emergency-btn { padding: 8px 18px; font-size: 14px; }
+  .logo { font-size: 22px; }
+  
+  /* Cards full width */
+  .cities-grid { grid-template-columns: 1fr; }
+  
+  /* Footer stack */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-about { text-align: center; }
+  .footer-social { justify-content: center; }
+  .footer-links { text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 32px; }
+  .hero { padding: 40px 20px; }
+  .trust-badges { gap: 12px; }
+  .trust-badge { padding: 8px 16px; font-size: 13px; }
+  .city-name { font-size: 22px; }
+  .city-price { font-size: 20px; }
+}
+
+/* ---------- ZERO LAYOUT SHIFT & ACCESSIBILITY ---------- */
+img, video, canvas { max-width: 100%; height: auto; }
+button, .btn, .emergency-btn, .hamburger, .overlay-close, .mobile-search-icon {
+  min-width: 44px;
+  min-height: 44px;
+}
+</style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
+    <!-- ---------- SIDE-SLIDING OVERLAY NAVIGATION ---------- -->
+    <div class="overlay" id="mobileOverlay">
+        <div class="overlay-close" id="closeOverlayBtn">&times;</div>
+        <ul class="overlay-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/states/">States</a></li>
+            <li><a href="/cities/">Cities</a></li>
+            <li><a href="/calculator/">Calculator</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ---------- PRO HEADER (GLASS + STICKY) ---------- -->
+    <header class="header" id="mainHeader">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">{site_logo_text}<span>{site_logo_icon}</span>.pro</a>
+                <a href="/" class="logo">ECBU<span>care-icon.svg</span>.pro</a>
+                
+                <!-- Desktop Navigation -->
                 <nav>
                     <ul class="nav-menu">
                         <li><a href="/">Home</a></li>
@@ -112,63 +749,78 @@
                         <li><a href="/contact/">Contact</a></li>
                     </ul>
                 </nav>
+
+                <!-- Desktop Search (expandable via CSS) -->
                 <div class="search-container">
                     <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search your city or ZIP...">
                     <div class="search-results" id="searchResults"></div>
                 </div>
-                <a href="tel:{site_phone_tracking}" class="emergency-btn">
+
+                <!-- Mobile Search Icon (expandable) -->
+                <div class="mobile-search-icon" id="mobileSearchIcon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="mobile-search-expand" id="mobileSearchExpand">
+                    <input type="text" class="mobile-search-input" placeholder="🔍 Search your city or ZIP...">
+                </div>
+
+                <a href="tel:442012345678" class="emergency-btn">
                     <i class="fas fa-phone-alt"></i> 24/7 Emergency
                 </a>
+
+                <!-- Hamburger Icon (for mobile) -->
+                <div class="hamburger" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- ---------- HERO ---------- -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>{hero_heading}</h1>
+                <h1>hero_heading</h1>
                 <div class="hero-subheadings">
-                    <span class="hero-subheading"><i class="fas fa-bolt"></i> {hero_subheading_1}</span>
-                    <span class="hero-subheading"><i class="fas fa-shield-alt"></i> {hero_subheading_2}</span>
-                    <span class="hero-subheading"><i class="fas fa-clock"></i> {hero_subheading_3}</span>
+                    <span class="hero-subheading"><i class="fas fa-bolt"></i> hero_subheading_1</span>
+                    <span class="hero-subheading"><i class="fas fa-shield-alt"></i> hero_subheading_2</span>
+                    <span class="hero-subheading"><i class="fas fa-clock"></i> hero_subheading_3</span>
                 </div>
                 <div class="hero-buttons">
-                    <a href="#estimate" class="btn btn-primary">
-                        <i class="fas fa-calculator"></i> {hero_cta_primary_text}
-                    </a>
-                    <a href="tel:{site_phone_tracking}" class="btn btn-outline">
-                        <i class="fas fa-phone"></i> {hero_cta_secondary_text}
-                    </a>
+                    <a href="#estimate" class="btn btn-primary"><i class="fas fa-calculator"></i> hero_cta_primary_text</a>
+                    <a href="tel:442012345678" class="btn btn-outline"><i class="fas fa-phone"></i> hero_cta_secondary_text</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ---------- TRUST BADGES ---------- -->
     <div class="container">
         <div class="trust-badges">
-            <span class="trust-badge"><i class="fas fa-certificate"></i> {trust_badge_1_text}</span>
-            <span class="trust-badge"><i class="fas fa-check-circle"></i> {trust_badge_2_text}</span>
-            <span class="trust-badge"><i class="fas fa-star"></i> {trust_badge_3_text}</span>
-            <span class="trust-badge"><i class="fas fa-shield"></i> {trust_badge_4_text}</span>
-            <span class="trust-badge"><i class="fas fa-clock"></i> {trust_badge_5_text}</span>
-            <span class="trust-badge"><i class="fas fa-file-invoice"></i> {trust_badge_6_text}</span>
-            <!-- certifications will be injected dynamically -->
+            <span class="trust-badge"><i class="fas fa-certificate"></i> trust_badge_1_text</span>
+            <span class="trust-badge"><i class="fas fa-check-circle"></i> trust_badge_2_text</span>
+            <span class="trust-badge"><i class="fas fa-star"></i> trust_badge_3_text</span>
+            <span class="trust-badge"><i class="fas fa-shield"></i> trust_badge_4_text</span>
+            <span class="trust-badge"><i class="fas fa-clock"></i> trust_badge_5_text</span>
+            <span class="trust-badge"><i class="fas fa-file-invoice"></i> trust_badge_6_text</span>
+            <span class="trust-badge"><i class="fas fa-certificate"></i> certification_name</span><span class="trust-badge"><i class="fas fa-certificate"></i> Certified Medicaid Planner (CMP)</span><span class="trust-badge"><i class="fas fa-certificate"></i> Accredited Estate Planner (AEP)</span><span class="trust-badge"><i class="fas fa-certificate"></i> Certified Senior Advisor (CSA)</span><span class="trust-badge"><i class="fas fa-certificate"></i> Elder Law Certification</span><span class="trust-badge"><i class="fas fa-certificate"></i> Better Business Bureau Accreditation</span><span class="trust-badge"><i class="fas fa-certificate"></i> Licensed Insurance Producer</span><span class="trust-badge"><i class="fas fa-certificate"></i> Certified Financial Planner (CFP®)</span><span class="trust-badge"><i class="fas fa-certificate"></i> National Association of Elder Law Attorneys Member</span>
         </div>
     </div>
 
+    <!-- ---------- ADSENSE TOP ---------- -->
     <div class="container">
-        <div class="adsense-container">
-            <div class="adsense-label">ADVERTISEMENT</div>
-            <div class="adsense-placeholder">{adsense_top_code}</div>
-        </div>
+        <div class="adsense-container"><div class="adsense-label">ADVERTISEMENT</div><div class="adsense-placeholder"><!-- AdSense Top Code --></div></div>
     </div>
 
+    <!-- ---------- LEAD FORM ---------- -->
     <section class="form-section" id="estimate">
         <div class="container">
             <div class="form-grid">
                 <div class="form-content">
-                    <h2>{lead_form_title}</h2>
-                    <p>{lead_form_incentive}</p>
+                    <h2>📊 Your Free Estimate</h2>
+                    <p>No obligation • Same-day response</p>
                     <ul class="benefits-list">
                         <li><i class="fas fa-check-circle"></i> 100% Free - No obligation</li>
                         <li><i class="fas fa-check-circle"></i> Same-day response guaranteed</li>
@@ -178,19 +830,11 @@
                     </ul>
                 </div>
                 <div class="form-fields">
-                    <form action="https://formspree.io/f/{formspree_id}" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Full Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="city" placeholder="Your City" required>
-                        </div>
+                    <form action="https://formspree.io/f/your-formspree-id" method="POST">
+                        <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                        <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number" required></div>
+                        <div class="form-group"><input type="text" name="city" placeholder="Your City" required></div>
                         <div class="form-group">
                             <select name="state" required>
                                 <option value="">Select State</option>
@@ -200,73 +844,121 @@
                                 <option value="NY">New York</option>
                             </select>
                         </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i> {lead_form_button_text}
-                        </button>
-                        <div class="form-disclaimer">
-                            🔒 By submitting, you agree to our <a href="/privacy/">Privacy Policy</a>.
-                            {disclosure_text}
-                        </div>
+                        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Get Instant Estimate</button>
+                        <div class="form-disclaimer">🔒 By submitting, you agree to our <a href="/privacy/">Privacy Policy</a>. We participate in affiliate programs.</div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ---------- FEATURED CITIES (RESPONSIVE CARDS) ---------- -->
     <div class="container">
-        <h2 class="section-title">📍 Water Damage Services in <span style="color: #ffcc00;">Top Cities</span></h2>
+        <h2 class="section-title">📍 Water Damage Services in <span style="color:var(--accent);">Top Cities</span></h2>
         <p class="section-subtitle">24/7 emergency response • Free estimates • Insurance approved</p>
-        <div class="cities-grid" id="featuredCities"></div>
-        <div style="text-align:center; margin:20px 0 40px;">
-            <a href="/cities/" class="btn btn-outline">View All Cities <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="cities-grid">
+    <a href="/city/city_slug/" class="city-card">
+      <div class="city-name">city_name</div>
+      <div class="city-price">$avg_cost_min - $avg_cost_max</div>
+      <div class="city-response"><i class="fas fa-clock"></i> response_time_hourshr response</div>
+      <div class="city-features"><span class="city-feature">IICRC</span></div>
+    </a>
+  
+    <a href="/city/houston/" class="city-card">
+      <div class="city-name">Houston</div>
+      <div class="city-price">$1200 - $4500</div>
+      <div class="city-response"><i class="fas fa-clock"></i> 24hr response</div>
+      <div class="city-features"><span class="city-feature">IICRC</span></div>
+    </a>
+  
+    <a href="/city/los-angeles/" class="city-card">
+      <div class="city-name">Los Angeles</div>
+      <div class="city-price">$1800 - $6000</div>
+      <div class="city-response"><i class="fas fa-clock"></i> 18hr response</div>
+      <div class="city-features"><span class="city-feature">IICRC</span></div>
+    </a>
+  </div>
+        <div style="text-align:center; margin:20px 0 40px;"><a href="/cities/" class="btn btn-outline">View All Cities <i class="fas fa-arrow-right"></i></a></div>
     </div>
 
+    <!-- ---------- INSURANCE PARTNERS ---------- -->
     <div class="container">
         <div class="insurance-section">
             <h3 style="color:#fff; margin-bottom:20px;">🏢 We Work Directly With 50+ Insurance Carriers</h3>
-            <div class="insurance-grid" id="insurancePartners"></div>
+            <div class="insurance-grid"><span class="insurance-item">partner_name</span><span class="insurance-item">Lone Star Medicaid Advisors</span><span class="insurance-item">Gulf Coast Senior Planning</span><span class="insurance-item">Pacific Care Consultants</span><span class="insurance-item">Midwest Benefit Strategies</span><span class="insurance-item">East Coast Eligibility Group</span><span class="insurance-item">Sunbelt Senior Advisors</span><span class="insurance-item">National Medicaid Planning Network</span></div>
         </div>
     </div>
 
+    <!-- ---------- ADSENSE MIDDLE ---------- -->
     <div class="container">
-        <div class="adsense-container">
-            <div class="adsense-label">ADVERTISEMENT</div>
-            <div class="adsense-placeholder">{adsense_middle_code}</div>
-        </div>
+        <div class="adsense-container"><div class="adsense-label">ADVERTISEMENT</div><div class="adsense-placeholder"><!-- AdSense Middle Code --></div></div>
     </div>
 
+    <!-- ---------- TESTIMONIALS ---------- -->
     <div class="container">
         <h2 class="section-title">⭐ What Our Customers Say</h2>
-        <p class="section-subtitle">{avg_rating}/5 from {annual_reviews_count}+ reviews</p>
-        <div class="testimonials-grid" id="featuredTestimonials"></div>
+        <p class="section-subtitle">avg_rating/5 from annual_reviews_count+ reviews</p>
+        <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-rating"></div>
+      <p class="testimonial-text">"review_content"</p>
+      <div class="testimonial-author">
+        <div><h4>customer_name</h4><p>customer_city, TX • Verified Homeowner</p></div>
+      </div>
+    </div>
+  
+    <div class="testimonial-card">
+      <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p class="testimonial-text">"The eligibility calculator gave me clarity within minutes, and I was connected with a planning advisor the same day. The process was straightforward and professional."</p>
+      <div class="testimonial-author">
+        <div><h4>Robert M.</h4><p>Houston, TX • Verified Homeowner</p></div>
+      </div>
+    </div>
+  
+    <div class="testimonial-card">
+      <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <p class="testimonial-text">"Comparing multiple Medicaid planning options saved us time. I would have preferred slightly faster follow-up, but overall very helpful."</p>
+      <div class="testimonial-author">
+        <div><h4>Linda S.</h4><p>Miami, TX • Verified Homeowner</p></div>
+      </div>
+    </div>
+  </div>
     </div>
 
+    <!-- ---------- FAQ ---------- -->
     <div class="container">
         <div class="faq-section">
             <h2 style="color:#fff; text-align:center;">❓ Frequently Asked Questions</h2>
-            <div class="faq-grid" id="faqGrid"></div>
+            <div class="faq-grid">
+                <div class="faq-item active">
+                    <div class="faq-question"><span>How much does water damage restoration cost?</span><i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer" style="display:block;">Average cost ranges from $1,200 to $4,000 depending on water category, square footage, and location.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span>Does homeowners insurance cover water damage?</span><i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Yes, most standard policies cover sudden and accidental water damage. We assist with claims.</div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- ---------- ADSENSE BOTTOM ---------- -->
     <div class="container">
-        <div class="adsense-container">
-            <div class="adsense-label">ADVERTISEMENT</div>
-            <div class="adsense-placeholder">{adsense_bottom_code}</div>
-        </div>
+        <div class="adsense-container"><div class="adsense-label">ADVERTISEMENT</div><div class="adsense-placeholder"><!-- AdSense Bottom Code --></div></div>
     </div>
 
+    <!-- ---------- FOOTER ---------- -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <h3>{site_logo_text}<span style="color:#ffcc00;">{site_logo_icon}</span>.pro</h3>
-                    <p>{site_tagline}</p>
+                    <h3>ECBU<span style="color:var(--accent);">care-icon.svg</span>.pro</h3>
+                    <p>Care Funding & Support Guidance</p>
                     <div class="footer-social">
-                        <a href="https://facebook.com/{social_facebook}"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/{social_twitter}"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com/{social_instagram}"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/{social_youtube}"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com/https://facebook.com/eldercarebenefitsuk"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/https://twitter.com/eldercareuk"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/https://instagram.com/eldercareuk"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/https://youtube.com/@eldercarebenefitsuk"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -280,16 +972,16 @@
                 </div>
                 <div class="footer-links">
                     <h4>Top States</h4>
-                    <ul id="footerStates"></ul>
+                    <ul><li><a href="/state/state_slug/">state_name</a></li><li><a href="/state/texas/">Texas</a></li><li><a href="/state/california/">California</a></li><li><a href="/state/florida/">Florida</a></li><li><a href="/state/new-york/">New York</a></li></ul>
                 </div>
                 <div class="footer-links">
                     <h4>Top Cities</h4>
-                    <ul id="footerCities"></ul>
+                    <ul><li><a href="/city/city_slug/">city_name</a></li><li><a href="/city/houston/">Houston</a></li><li><a href="/city/los-angeles/">Los Angeles</a></li></ul>
                 </div>
                 <div class="footer-links">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/about/">About</a></li>
                         <li><a href="/contact/">Contact</a></li>
                         <li><a href="/blog/">Blog</a></li>
                         <li><a href="/privacy/">Privacy</a></li>
@@ -300,98 +992,93 @@
                 <div class="footer-legal">
                     <a href="/privacy/">Privacy</a> | <a href="/terms/">Terms</a> | <a href="/disclaimer/">Disclaimer</a> | <a href="/disclosure/">Disclosure</a>
                 </div>
-                <p class="copyright">© {copyright_year} {site_name}. All rights reserved.</p>
+                <p class="copyright">© 2026 WaterDamage.pro. All rights reserved.</p>
                 <div class="disclaimer-text">
-                    <p><strong>Disclaimer:</strong> {footer_disclaimer_text}</p>
-                    <p><strong>Affiliate Disclosure:</strong> {footer_disclosure_text}</p>
+                    <p><strong>Disclaimer:</strong> Actual costs may vary. Free estimates provided by local certified partners.</p>
+                    <p><strong>Affiliate Disclosure:</strong> We participate in affiliate programs. This keeps our service free.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- ---------- INTERACTIVE JAVASCRIPT ---------- -->
     <script>
-        // Cities data will be injected by Apps Script
-        window.citiesData = {cities_json};
-        window.testimonialsData = {testimonials_json};
-        window.insuranceData = {insurance_json};
-        window.statesData = {states_json};
+        // ---------- STICKY HEADER SHRINK ----------
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
-        // Render featured cities
-        const featuredCities = document.getElementById('featuredCities');
-        if (featuredCities && window.citiesData) {
-            featuredCities.innerHTML = window.citiesData.slice(0,6).map(c => `
-                <a href="/city/${c.city_slug}/" class="city-card">
-                    <div class="city-name">${c.city_name}</div>
-                    <div class="city-price">$${c.avg_cost_min} - $${c.avg_cost_max}</div>
-                    <div class="city-response"><i class="fas fa-clock"></i> ${c.response_time_hours}hr response</div>
-                    <div class="city-features"><span class="city-feature">IICRC</span></div>
-                </a>
-            `).join('');
-        }
-
-        // Render testimonials
-        const testimonialsEl = document.getElementById('featuredTestimonials');
-        if (testimonialsEl && window.testimonialsData) {
-            testimonialsEl.innerHTML = window.testimonialsData.slice(0,3).map(t => `
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">${'<i class="fas fa-star"></i>'.repeat(t.rating||5)}</div>
-                    <p class="testimonial-text">"${t.review_content}"</p>
-                    <div class="testimonial-author">
-                        <div><h4>${t.customer_name}</h4><p>${t.customer_city}, Verified Homeowner</p></div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Render insurance partners
-        const insuranceEl = document.getElementById('insurancePartners');
-        if (insuranceEl && window.insuranceData) {
-            insuranceEl.innerHTML = window.insuranceData.slice(0,8).map(i => 
-                `<span class="insurance-item">${i.partner_name}</span>`
-            ).join('');
-        }
-
-        // Footer states
-        const footerStates = document.getElementById('footerStates');
-        if (footerStates && window.statesData) {
-            footerStates.innerHTML = window.statesData.slice(0,5).map(s => 
-                `<li><a href="/state/${s.state_slug}/">${s.state_name}</a></li>`
-            ).join('');
-        }
-
-        // Search functionality
-        const searchInput = document.getElementById('searchInput');
-        const searchResults = document.getElementById('searchResults');
-        if (searchInput && window.citiesData) {
-            const cityList = window.citiesData.map(c => ({name: `${c.city_name}, ${c.state_code}`, url: `/city/${c.city_slug}/`}));
-            searchInput.addEventListener('input', function(e) {
-                const query = e.target.value.toLowerCase();
-                if (query.length < 2) { searchResults.style.display = 'none'; return; }
-                const matches = cityList.filter(c => c.name.toLowerCase().includes(query)).slice(0,5);
-                if (matches.length) {
-                    searchResults.innerHTML = matches.map(c => 
-                        `<a href="${c.url}" class="search-result-item"><i class="fas fa-map-marker-alt" style="color:#ffcc00; margin-right:10px;"></i>${c.name}</a>`
-                    ).join('');
-                    searchResults.style.display = 'block';
-                } else searchResults.style.display = 'none';
+        // ---------- SIDE-SLIDING OVERLAY ----------
+        const hamburger = document.getElementById('hamburgerBtn');
+        const overlay = document.getElementById('mobileOverlay');
+        const closeBtn = document.getElementById('closeOverlayBtn');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                overlay.classList.add('active');
             });
-            document.addEventListener('click', (e) => {
-                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) searchResults.style.display = 'none';
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                overlay.classList.remove('active');
+            });
+        }
+        // Close overlay when clicking on a link
+        overlay?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => overlay.classList.remove('active'));
+        });
+
+        // ---------- MOBILE SEARCH EXPAND ----------
+        const mobileSearchIcon = document.getElementById('mobileSearchIcon');
+        const mobileSearchExpand = document.getElementById('mobileSearchExpand');
+        if (mobileSearchIcon) {
+            mobileSearchIcon.addEventListener('click', function() {
+                mobileSearchExpand.classList.toggle('active');
             });
         }
 
-        // FAQ accordion
+        // ---------- FAQ ACCORDION ----------
         document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', function() { this.parentElement.classList.toggle('active'); });
+            q.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        // ---------- SEARCH AUTOCOMPLETE (SAMPLE) ----------
+        window.citiesData = [{"name":"city_name, state_code","url":"/city/city_slug/"},{"name":"Houston, TX","url":"/city/houston/"},{"name":"Los Angeles, CA","url":"/city/los-angeles/"}];
+        
+        document.getElementById('searchInput')?.addEventListener('input', function(e) {
+            const q = e.target.value.toLowerCase();
+            const r = document.getElementById('searchResults');
+            if (!r) return;
+            if (q.length < 2) { r.style.display = 'none'; return; }
+            const m = window.citiesData.filter(c => c.name.toLowerCase().includes(q)).slice(0,5);
+            if (m.length) {
+                r.innerHTML = m.map(c => '<a href="'+c.url+'" class="search-result-item"><i class="fas fa-map-marker-alt" style="color:var(--accent); margin-right:10px;"></i>'+c.name+'</a>').join('');
+                r.style.display = 'block';
+            } else {
+                r.style.display = 'none';
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                const r = document.getElementById('searchResults');
+                if (r) r.style.display = 'none';
+            }
         });
     </script>
+
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={google_analytics_id}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFGH5678IJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '{google_analytics_id}');
+        gtag('config', 'G-EFGH5678IJ');
     </script>
     <!-- Facebook Pixel -->
     <script>
@@ -402,7 +1089,7 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '{facebook_pixel_id}');
+        fbq('init', '523456789012345');
         fbq('track', 'PageView');
     </script>
 </body>
