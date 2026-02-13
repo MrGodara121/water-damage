@@ -1,8 +1,1 @@
-User-agent: *
-Allow: /
-Disallow: /privacy/
-Disallow: /terms/
-Disallow: /disclaimer/
-Disallow: /disclosure/
-
-Sitemap: https://{domain}/sitemap.xml 
+...
